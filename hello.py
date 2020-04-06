@@ -1,5 +1,6 @@
 def app(environ, start_response):
-    query = environ['QUERY_STRING'].split('?')[1]
+    print(environ)
+    query = environ['QUERY_STRING']
     data = query.replace('&','\n')
     start_response("200 OK", [
         ("Content-Type", "text/plain"),
